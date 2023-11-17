@@ -3,3 +3,6 @@ LECHE
 ALFAJOR 
 GALLETITAS
 PALITOS
+papitas 
+gaseosa 
+arroz 
