@@ -1,0 +1,29 @@
+body{
+      font-family: Arial, Helvetica, sans-serif;
+      padding:0;
+      margin: 0;
+      box-sizing: border-box;
+      background-color: beige;
+}
+header {
+  text-align: center;
+  background-color: darkred;
+  color: white;
+  padding: 20px;
+}
+section{
+  max-width: 800px;
+  margin: 20px auto ;
+  padding: 20px;
+  background-color: white; 
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
