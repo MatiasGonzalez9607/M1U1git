@@ -1,0 +1,11 @@
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+
+}
+#cuadrado1{background-color: orange;}
+#cuadrado2{background-color: violet;}
+#cuadrado3{background-color: green;}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercio 1 cuadrados y Fondo </title>
+    <link rel="stylesheet" href="ejercicio1.css">
+</head>
+<body>
+    <div class="cuadrado" id="cuadrado1"></div>
+    <div class="cuadrado" id="cuadrado2"></div>
+    <div class="cuadrado" id="cuadrado3"></div>
+    <script>
+        var cuadrado1 = document.getElementById("cuadrado1")
+        var cuadrado2 = document.getElementById("cuadrado2")
+        var cuadrado3 = document.getElementById("cuadrado3")
+
+        cuadrado1.addEventListener("click", cambiarColor);
+        cuadrado2.addEventListener("click", cambiarColor);
+        cuadrado3.addEventListener("click", cambiarColor);
+
+        function cambiarColor() {
+            var colorCuadrado = this.style.backgroundColor || window.getComputedStyle(this).backgroundColor;
+    document.body.style.backgroundColor = colorCuadrado;
+}
+    
+    </script>
+</body>
+</html>
