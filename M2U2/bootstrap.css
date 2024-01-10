@@ -1,0 +1,16 @@
+.container-fluid{
+    border-radius: 10px;
+    background-color: bisque;
+    justify-content: space-around
+}
+.container-fluid1{
+    border-radius: 10px;
+    background-color: black;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: space-between;
+}
+.navbar-nav¨{
+    justify-content: space-between;
+    flex: auto;
+}
