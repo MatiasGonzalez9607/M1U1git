@@ -11,11 +11,11 @@ router.post('/', async(req, res, next) => {
 
   console.log(req.body) //Estoy agarrando los datos ?
   
-  var Nombre= req.body.Nombre //LLamo a los datos 
-  var Apellido= req.body.Apellido
-  var Email= req.body.Email
-  var Telefono= req.body.Tel
-  var Mensaje= req.body.Mensaje
+  var Nombre= req.body.Nombre; //LLamo a los datos 
+  var Apellido= req.body.Apellido;
+  var Email= req.body.Email;
+  var Telefono= req.body.Tel;
+  var Mensaje= req.body.Mensaje;
 
 
   var obj= {
@@ -27,17 +27,25 @@ router.post('/', async(req, res, next) => {
   
   var transporter= nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: procces.env.SMTP_PORT,
+    port: process.env.SMTP_PORT,
     auth: {
-      user: procces.env.SMTP_USER,
+      user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
+    }
+  });
+
+  transporter.sendMail(obj, function(err, info) {
+    if (err) {
+      console.log(err);
+      res.render('index', { message: 'Error al enviar el mensaje. Inténtalo de nuevo más tarde.' });
+    } else {
+      console.log(info);
+      res.render('index', { message: '¡Mensaje enviado correctamente!' });
     }
   });
   
   
-  res.render('index',{
-  message: 'Mensaje enviado correctamente !',  
-  })
+  
 
 
 } )
