@@ -79,3 +79,9 @@ h2{
 html{
     scroll-behavior: smooth;
 }
+
+a.btn.btn-sucess {
+    box-sizing: border-box;
+    background-color: #219529;
+
+}

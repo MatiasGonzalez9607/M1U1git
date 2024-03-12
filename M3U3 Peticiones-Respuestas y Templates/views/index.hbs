@@ -13,42 +13,37 @@
         <div id="novedades" class="col-md-5 offset-md-2 py-3">
             <h2>Novedades</h2>
             <ul class="lista-novedades">
+                {{#each novedades}}
                 <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/novedades01.jpg" />Nuevas Recetas 1</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}"><img
+                            src="images/novedades01.jpg" /> {{titulo}}  </a>
                 </li>
-                <li>
-                    <a href="#"><img src="images/novedades01.jpg" />Nuevas Recetas 2</a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/novedades01.jpg" />Nuevas Recetas 3</a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/novedades01.jpg" />Nuevas Recetas 4</a>
-                </li>
-                <li>
-                    <a href="#"><img src="images/novedades01.jpg" />Nuevas Recetas 5</a>
-                </li>
+                {{/each}}
             </ul>
         </div> <!--Cierra Novedades -->
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {{#each novedades}}
+        <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">
-                            Nuevas recetas 1
+                            {{titulo}}
                         </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <p>
-                            tendria que aparecer la receta 1 cargada en la base de datos..
+                          <h4> {{subtitulo}} </h4>
+                          <p> {{cuerpo}} </p>
+
                         </p>
                     </div>
                 </div>
             </div>
-        </div> <!--Fin modal-->
+        </div> 
+        {{/each}}
+                    <!--Fin modal-->
         <div class="col-md-3 my-3">
             <div class="rounded py-5 testimonios">
                 <h2 class="text-center">Testimonios</h2>
