@@ -1,0 +1,99 @@
+h1,
+h2{
+    font-family: 'loto static'; 
+    color: darkred;
+  }
+
+ p{
+  color: black;
+  font-family: 'loto static';
+ } 
+
+footer{
+  background-color: #aaa;
+  text-align: center;
+}
+
+.hero{
+  background: url(../images/helado\ 4.jpg) no-repeat;
+  background-size: cover;
+  height: 0.5vh;
+  min-height: 600px;
+  color: white;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  justify-content: center;
+  transition: border-color 0.5s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+  border-color: darkred;
+}
+
+
+.image-container .image-item {
+  flex: 1 1 120px;
+  text-align: center;
+}
+
+
+.image-container .image-item p {
+  margin-top: 10px;
+}
+
+
+.image-container .image-item img {
+  width: 100%; 
+  max-width: 200px; 
+  border-radius: 50%;
+}  
+
+.bg-gray {
+  background-color: #cccccc; 
+}
+
+.historia-image {
+  width: 100%; 
+  height: auto; 
+}
+
+
+.form-control {
+  border-radius: 10px; 
+  border-color: darkred; 
+}
+
+
+.btn-primary {
+  background-color: blue;
+  border-color: white;
+}
+
+
+.btn-primary:hover {
+  background-color: darkred; 
+  border-color: white; 
+}
+
+
+.form-label {
+  color: black; 
+  font-weight: bold; 
+}
+
+.verde-negrita {
+  color: green;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white; 
+  background-color: darkred; 
+  border-radius: 10px;
+  transition: all 0.3s ease; 
+}
