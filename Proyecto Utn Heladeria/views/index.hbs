@@ -20,9 +20,8 @@
     </div>
 
     <div class="image-container">
-
       <div class="image-item">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}">
           <img src="/images/Chocolate.png" alt="Imagen 1"></a>
         <p> Chocolate.</p>
       </div>
@@ -59,25 +58,26 @@
         <p> Tramontana </p>
       </div>
     </div>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{#each sabores}}
+    <div class="modal fade" id="#Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Tipos de Chocolate
+            {{Sabor}}
             </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
             </button>
           </div>
           <div class="modal-body">
             <p>
-              tendria que aparecer los tipos de chocalate cargados en la bd....
+              {{Gustos}}
             </p>
           </div>
         </div>
       </div>
     </div> <!--Fin modal-->
+    {{/each}}
 
     <div id="nosotros" class="row  my-3 staff py-4 ">
       <div class="col-lg-5 offset-lg-4">
@@ -161,35 +161,35 @@
 
   </div><!--Final seccion historia -->
 
-<div class="col-md-4 offset-lg-2 mt-5 mt-sm-0  py-4 "> <!--Arranca seccion contacto-->
-  <h2>Contacto</h2>
-  <form class="row g-3" action="/" method="post">
-    <div class="col-md-6">
-      <label for="Nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="Nombre" name="Nombre">
-    </div>
-    <div class="col-md-6">
-      <label for="Apellido" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="Apellido" name="Apellido">
-    </div>
-    <div class="col-12">
-      <label for="Email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="Email" name="Email" placeholder="example@email.com">
-    </div>
-    <div class="col-12">
-      <label for="Tel" class="form-label">Tel</label>
-      <input type="text" class="form-control" id="Tel" name="Tel" placeholder="...">
-    </div>
-    <div class="col-md-6">
-      <label for="Mensaje" class="form-label">Mensaje</label>
-      <textarea class="form-control" id="Mensaje" name="Mensaje" rows="3"></textarea>
-    </div>
-   <div class="col-12">
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
-  </form>
-      <p class="verde-negrita"> {{message}} </p>
-</div> 
+  <div class="col-md-4 offset-lg-2 mt-5 mt-sm-0  py-4 "> <!--Arranca seccion contacto-->
+    <h2>Contacto</h2>
+    <form class="row g-3" action="/" method="post">
+      <div class="col-md-6">
+        <label for="Nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre">
+      </div>
+      <div class="col-md-6">
+        <label for="Apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="Apellido" name="Apellido">
+      </div>
+      <div class="col-12">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="example@email.com">
+      </div>
+      <div class="col-12">
+        <label for="Tel" class="form-label">Tel</label>
+        <input type="text" class="form-control" id="Tel" name="Tel" placeholder="...">
+      </div>
+      <div class="col-md-6">
+        <label for="Mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="Mensaje" name="Mensaje" rows="3"></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+    <p class="verde-negrita"> {{message}} </p>
+  </div>
 
 
 

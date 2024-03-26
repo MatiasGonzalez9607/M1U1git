@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer= require('nodemailer')
+var saboresModel= require('../models/saboresModel')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function(req, res, next) {
+  
+  var sabores= await saboresModel.getsabores();
+  res.render('index', { 
+    sabores
+   });
 });
 
 router.post('/', async(req, res, next) => {

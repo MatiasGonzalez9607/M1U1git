@@ -8,16 +8,23 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/logout', function(req,res,next){
+    req.session.destroy();
+    res.render('admin/login',{
+        layout: 'admin/layout'
+    });
+});
+
 router.post('/', async(req, res, next) => {
     try {
         var usuario = req.body.usuario;
         var password = req.body.password;
 
-        var data = await usuariosModels.getUserByUsernameAndPassword(usuario, password);
+        var data = await usuariosModels.getUserAndPassword(usuario, password);
 
         if (data != undefined) {
             req.session.id_usuario = data.id; //id --> nombre de la columna base de datos
-            req.session.id_nombre = data.usuario;
+            req.session.nombre = data.usuario;
             req.session.save(() => {
                 res.redirect('/admin/sabores');
             });
