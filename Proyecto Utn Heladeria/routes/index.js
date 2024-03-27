@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
   
   var sabores= await saboresModel.getsabores();
   
-  sabores= sabores.splice(0, 6);
+  sabores= sabores.splice(0, 7);
   sabores= sabores.map(sabor=>{
     if(sabor.img_id){
       const imagen = cloudinary.url(sabor.img_id,{
