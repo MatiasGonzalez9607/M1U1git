@@ -1,36 +1,65 @@
 <div class="container" style="margin-top: 100px;">
     <div class="row">
         <div class="col">
-            <p style="float: right;">
-                <span>Hola {{  usuario  }}! </span>
-                <a href="/admin/login/logout" class="btn btn-danger"> Cerrar sesion 
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <p class="text-right">
+                <span>Hola {{usuario}}!</span>
+                <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión 
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </a>
+            
+            </a>
             </p>
+            </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-7">
+            <h2>Listado de Sabores</h2>
+        </div>
+        <div class="col-5 text-right">
+            
         </div>
     </div>
-
-     <div class="row">
+    <div class="row">
         <div class="col">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Titulo</th>
+                        <th scope="col">Sabor</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col"> <a href="/admin/sabores/agregar" class="btn btn-success">
+                <i class="fa-solid fa-plus"></i> Nuevo Sabor </th>
                         <th scope="col" class="text-center"></th>
                     </tr>
                 </thead>
+
+                <div class="col-3">
+                    <form class="form-inline my-2 my-lg-0" action="/admin/sabores" method="get">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar..." name="q" {{#if q}}value="{{q}}{{/if}}">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"> <i class="fa fa-search"></i></button>
+                    </form>
+                    {{#if is_search}}
+                        {{#unless sabores.length}}
+                            No se encontraron resultados para "<strong> {{q}} </strong>"
+                        {{/unless}}
+                    {{/if}}        
+                </div>
+
                 <tbody>
                     {{#each sabores}}
                     <tr>
-                        <th scope="row"> {{id}} </th>
-                        <td>  {{Sabor}} </td>
+                        <th scope="row">{{id}}</th>
+                        <td>{{Sabor}}</td>
+                        <td>{{{imagen}}} </td>
                         <td class="text-center">
-                            <a href="" class="btn btn-sm btn-secondary">
+                            <a href="/admin/sabores/modificar" class="btn btn-sm btn-secondary">
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <a href="/admin/sabores/eliminar/{{id}}" class="btn btn-sm btn-secondary">
                                 <i class="fa fa-trash"></i>
                             </a>
+                            
                         </td>
                     </tr>
                     {{/each}}
@@ -38,5 +67,4 @@
             </table>
         </div>
     </div>
-
 </div>

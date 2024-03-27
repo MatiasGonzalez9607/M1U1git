@@ -1,0 +1,21 @@
+<div class="container " style="margin: 50px auto">
+    <div class="row">
+        <div class="col-6 offset -3">
+            <h4>Editar Sabor</h4>
+            <form method="post" action="/admin/sabores/modificar">
+            <input type="hidden" value="{{sabores.id}}" name="id">
+            <div class="form-group ">
+                <input type="text" placeholder="Sabor" value="{{sabores.Sabor}}" class="form-control" name="Sabor">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Gusto" class="form-control" name="Gustos" >{{sabores.Gustos}} </textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Confirmar Cambio</button>
+            </form>
+            {{#if error}}
+            <h5>{{message}} </h5>
+            {{/if}}
+        </div>
+    </div>
+</div>

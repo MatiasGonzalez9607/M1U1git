@@ -1,12 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer= require('nodemailer')
-var saboresModel= require('../models/saboresModel')
+var saboresModel= require('../models/saboresModel');
+var cloudinary= require('cloudinary').v2;
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   
   var sabores= await saboresModel.getsabores();
+  
+  sabores= sabores.splice(0, 6);
+  sabores= sabores.map(sabor=>{
+    if(sabor.img_id){
+      const imagen = cloudinary.url(sabor.img_id,{
+        width:460,
+        crop: 'fill'
+      });
+    return{
+      ...sabor,
+      imagen
+    }
+    
+    }else{
+      return{
+        ...sabor,
+        imagen: '/images/noimage.jpg'
+      }
+    }
+  })
+  
   res.render('index', { 
     sabores
    });

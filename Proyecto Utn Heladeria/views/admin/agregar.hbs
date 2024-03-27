@@ -1,0 +1,33 @@
+<div class="container" style="margin: 100px auto">
+    <div class="row">
+     <div class="col-6 offset-3">
+    <h2 class="text-center mb-4">Agregar un nuevo Sabor</h2>
+    <form action="/admin/sabores/agregar" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nuevoSabor" class="form-label">Nuevo Sabor:</label>
+            <input type="text" id="nuevoSabor" class="form-control" placeholder="Inserte nuevo sabor" name="Sabor" required>
+        </div>
+        <div class="form-group">
+            <label for="nuevoGusto" class="form-label">Nuevo Gusto:</label>
+            <textarea id="nuevoGusto" class="form-control" placeholder="Inserte nuevo gusto" name="Gustos" required></textarea>
+        </div>
+        <div class="form-group">
+            <label>Imagen: <input type="file" class="form-label" 
+            name="imagen" id="imagen"> </label>
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    
+    {{#if error}}
+    <div class="alert alert-danger mt-3" role="alert">
+        {{message}}
+    </div>
+    {{/if}}
+</div>  
+
+
+        </div>
+    </div>
+</div>
