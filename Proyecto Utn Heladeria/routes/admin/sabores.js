@@ -4,6 +4,7 @@ var saboresModel= require('./../../models/saboresModel');
 var util= require('util');
 var cloudinary= require('cloudinary').v2;
 const uploader= util.promisify(cloudinary.uploader.upload);
+const destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function(req,res,next){
     
@@ -127,7 +128,7 @@ router.post('/modificar', async(req,res,next)=>{
         let obj={
             Sabor: req.body.Sabor,
             Gustos: req.body.Gustos,
-            
+            img_id
         }
 
         await saboresModel.modificarsaboresById(obj,req.body.id );
